@@ -1,3 +1,9 @@
+<?php require 'admin/conexion.php';?>
+<?php
+    $conexion = new Conexion();
+    $sql = 'SELECT c.nombre as categoria, s.nombre as seccion FROM categorias c LEFT JOIN secciones s ON c.id = s.categoria_id ORDER BY c.nombre ASC';
+    $registros = $conexion->consultar($sql);
+?>
 <?php require 'header.php';?>
     <header class="cabecera p-2">
         <h1>Repositorio</h1>
@@ -6,34 +12,21 @@
         <div class="lado">
             <div class="navigation">
                 <ul class="navigation__top__level">    
-                    <li><a href="#">ADMINISTRACION</a>
-                        <ul class="navigation__sub__level">
-                            <li><a href="index.php?sec=33">ACTAS</a></li>
-                            <li><a href="index.php?sec=100">CONVENIOS</a></li>
-                            <li><a href="index.php?sec=49">EMISION DE ISR</a></li>
-                            <li><a href="index.php?sec=36">EXPEDIENTES ENVIADOS</a></li>
-                            <li><a href="index.php?sec=37">EXPEDIENTES RECIBIDOS</a></li>
-                            <li><a href="index.php?sec=34">FAX ENVIADOS</a></li>
-                            <li><a href="index.php?sec=35">FAX RECIBIDOS</a></li>
-                            <li><a href="index.php?sec=88">HALLAZGOS DE AUDITORIAS</a></li>
-                            <li><a href="index.php?sec=39">MAPO 55</a></li>
-                        </ul>
-                    </li>
-                </ul>    
-                <ul class="navigation__top__level">    
-                    <li><a href="#">ADMINISTRACION</a>
-                        <ul class="navigation__sub__level">
-                            <li><a href="index.php?sec=33">ACTAS</a></li>
-                            <li><a href="index.php?sec=100">CONVENIOS</a></li>
-                            <li><a href="index.php?sec=49">EMISION DE ISR</a></li>
-                            <li><a href="index.php?sec=36">EXPEDIENTES ENVIADOS</a></li>
-                            <li><a href="index.php?sec=37">EXPEDIENTES RECIBIDOS</a></li>
-                            <li><a href="index.php?sec=34">FAX ENVIADOS</a></li>
-                            <li><a href="index.php?sec=35">FAX RECIBIDOS</a></li>
-                            <li><a href="index.php?sec=88">HALLAZGOS DE AUDITORIAS</a></li>
-                            <li><a href="index.php?sec=39">MAPO 55</a></li>
-                        </ul>
-                    </li>
+                    <?php
+                        $top = '';
+                        foreach ($registros as $registro) {
+                            if($top != $registro['categoria']){
+                                if($top != ''){
+                                    echo '</ul></li>';
+                                }
+                                echo '<li><a href=\'\'>' . $registro['categoria'] . '</a><ul class=\'navigation__sub__level\'>';
+                                echo '<li><a href=\'\'>' . $registro['seccion'] . '</a></li>';
+                                $top = $registro['categoria'];
+                            } else {
+                                echo '<li><a href=\'\'>' . $registro['seccion'] . '</a></li>';
+                            }
+                        }
+                    ?>
                 </ul>    
             </div>
         </div>

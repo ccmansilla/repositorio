@@ -9,7 +9,6 @@
                     <li><a href="#">ADMINISTRACION</a>
                         <ul class="navigation__sub__level">
                             <li><a href="index.php?sec=33">ACTAS</a></li>
-                            <li><a href="index.php?sec=57">CIRCULARES ADMINISTRATIVAS</a></li>
                             <li><a href="index.php?sec=100">CONVENIOS</a></li>
                             <li><a href="index.php?sec=49">EMISION DE ISR</a></li>
                             <li><a href="index.php?sec=36">EXPEDIENTES ENVIADOS</a></li>
@@ -25,7 +24,6 @@
                     <li><a href="#">ADMINISTRACION</a>
                         <ul class="navigation__sub__level">
                             <li><a href="index.php?sec=33">ACTAS</a></li>
-                            <li><a href="index.php?sec=57">CIRCULARES ADMINISTRATIVAS</a></li>
                             <li><a href="index.php?sec=100">CONVENIOS</a></li>
                             <li><a href="index.php?sec=49">EMISION DE ISR</a></li>
                             <li><a href="index.php?sec=36">EXPEDIENTES ENVIADOS</a></li>

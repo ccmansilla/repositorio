@@ -1,11 +1,11 @@
 CREATE TABLE categorias (
   id int AUTO_INCREMENT PRIMARY KEY,
-  nombre varchar(60) NOT NULL
+  nombre varchar(20) NOT NULL
 );
 
 CREATE TABLE secciones (
   id int AUTO_INCREMENT PRIMARY KEY,
-  nombre varchar(60) NOT NULL,
+  nombre varchar(20) NOT NULL,
   categoria_id int 
 );
 

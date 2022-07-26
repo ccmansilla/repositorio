@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+.cabecera {
+    min-height: 10vh;
+    background-color: #353535;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    text-shadow: 2px 2px black;
+}
+
+.main {
+    width: 100%;
+}
+
+.lado {
+    min-height: 85vh;            
+    background-color: #056aad;
+    border-right: 2px black solid;
+}
+
+.seccion {
+    min-height: 70vh;
+    background-color: #ffffff;
+    color: black;
+}
+
+.pie {
+    width: 100%;
+    min-height: 5vh;
+    padding: 10px;
+    background-color: #353535;
+    color: white;
+    text-align: center;
+}
+
+.navigation { 
+    width: auto;
+}
+
+.navigation ul { 
+    margin:0px; 
+    padding:0px; 
+}
+
+.navigation li {
+    list-style: none;
+}
+
+.navigation a {
+    background-color: #056aad;
+    color: white;
+    display: block;
+    height: 30px;
+    font-family: 'Oswald', sans-serif;
+    text-indent: 10px;
+    text-decoration: none;
+    width: 100%;
+}
+
+.navigation a:hover{
+    background-color: #3c945d;
+    color: white;
+}
+
+.navigation__sub__level{
+    display: none;
+}
+
+.navigation__top__level li { 
+    width: 220px; 
+}
+
+.navigation__top__level li:hover {
+    border-top: 1px black solid;
+    border-bottom: 1px black solid;
+    position: relative;
+}
+
+.navigation li:hover ul.navigation__sub__level {
+    background-color: #799bb7;
+    border: #000 solid;
+    border-width: 1px;
+    display: block;
+    z-index: 2;
+    position: absolute;
+    left: 180px;
+    top: 5px;
+}
+
+.navigation__sub__level li {
+    width: 240px;
+}
+
+.card {
+    z-index: 1;
+}

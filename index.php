@@ -13,19 +13,27 @@
             <div class="navigation">
                 <ul class="navigation__top__level">    
                     <?php
-                        $top = '';
-                        foreach ($registros as $registro) {
-                            if($top != $registro['categoria']){
-                                if($top != ''){
+                        $ant = '';
+                        $longitud = count($registros);
+                        for ($i = 0; $i < $longitud; $i++) {
+                            $registro = $registros[$i];
+                            if($ant != $registro['categoria']){
+                                if($ant != ''){
                                     echo '</ul></li>';
                                 }
-                                echo '<li><a href=\'\'>' . $registro['categoria'] . '</a><ul class=\'navigation__sub__level\'>';
-                                echo '<li><a href=\'\'>' . $registro['seccion'] . '</a></li>';
-                                $top = $registro['categoria'];
+                                echo '<li><a href=\'#\'>' . $registro['categoria'] . '</a><ul class=\'navigation__sub__level\'>';
+                                echo '<li><a href=\'seccion\'>' . $registro['seccion'] . '</a></li>';
+                                $ant = $registro['categoria'];
                             } else {
-                                echo '<li><a href=\'\'>' . $registro['seccion'] . '</a></li>';
+                                echo '<li><a href=\'seccion\'>' . $registro['seccion'] . '</a></li>';
                             }
-                        }
+                            if($i < ($longitud - 1)){
+                                $sig = $registros[$i + 1]['categoria'];
+                                if($ant != $sig){
+                                    echo '</ul></li>';
+                                }
+                            } 
+                        } 
                     ?>
                 </ul>    
             </div>
